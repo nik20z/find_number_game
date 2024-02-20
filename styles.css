@@ -1,0 +1,234 @@
+/* Анимации */
+@keyframes come-in {
+  0% {
+      -webkit-transform: translate(632px);
+      transform: translate(632px)
+  }
+
+  to {
+      -webkit-transform: translate(0);
+      transform: translate(0)
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scale(.4)
+  }
+}
+
+@keyframes rotate {
+  25% {
+    transform: rotate(-15deg)
+  }
+
+  50% {
+    transform: rotate(0)
+  }
+
+  75% {
+    transform: rotate(15deg)
+  }
+
+  to {
+    transform: rotate(0)
+  }
+}
+
+.number-item-animation--blink {
+  animation: blink .4s ease-in infinite alternate;
+
+}
+
+.number-item-animation--scale {
+  animation: scale .4s ease-in infinite alternate;
+
+}
+
+.number-item-animation--rotate .number-item__text {
+  animation: rotate .6s linear infinite;
+}
+
+.number-table {
+  transition: all .2s linear
+}
+
+
+/* Цвета кнопок */
+
+.item-color--pink {
+  background: #fc73b0
+}
+
+.item-color--orange {
+  background: #f28e37
+}
+
+.item-color--purple {
+  background: #8e3dcb
+}
+
+.item-color--blue {
+  background: #4db8ec
+}
+
+.item-color--yellow {
+  background: #fdc10a
+}
+
+.item-color--green {
+  background: #94c94d
+}
+
+
+/* Основное содержимое */
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button.start-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.data-game {
+  padding-top: 20px;
+}
+
+
+/* Контейнер со всем содержимым */
+.game-container {
+  height: 100%;
+  margin: 20px;
+  transition: background-color 0.3s ease;
+}
+
+
+.target-number {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+
+/* Число для поиска */
+.target-number {
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 1.5em 1.2em;
+  border-radius: 3px;
+  color: #fff;
+  box-shadow: 0 7px 35px 0 rgba(0, 0, 0, .3)
+}
+
+.target-number__text {
+  margin: 0;
+  font-family: Open Sans, Arial, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, sans-serif;
+  font-size: 1.15em;
+  font-weight: 600
+}
+
+.target-number-reference {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 3.15em;
+  line-height: 1;
+  position: absolute;
+  top: 24px;
+  right: 20px
+}
+
+/* Таблица с числами */
+.number-table {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.number-table,
+.number-table__row {
+  display: flex;
+  width: 100%
+}
+
+/* Строка в таблице */
+.number-table__row {
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  animation: come-in 0.3s ease-out;
+}
+
+/* Кнопка с номером */
+.number-item {
+  position: relative;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  width: 18%;
+  line-height: 40px;
+  font-size: 18px;
+}
+
+.number-item:focus,
+.number-item:hover {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, .3)
+}
+
+.number-item__text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%
+}
+
+
+@media screen and (min-width: 632px) {
+  .game-container {
+    padding: 0
+  }
+
+  .target-number {
+    flex-direction: row;
+    max-width: 485px;
+    margin: 60px auto 30px
+  }
+
+  .number-table {
+    max-width: 485px;
+    margin: 0 auto
+  }
+}
+

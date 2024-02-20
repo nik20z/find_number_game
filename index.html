@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Найди число</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Игра "Найди число"</h1>
+  </header>
+  <div class="main-window">
+    <button class="start-button" onclick="Game.start()">Начать</button>
+    <div class="game-container">
+      <div class="data-game"> 
+        <div class="timer">Осталось времени: 60 сек.</div>
+        <div class="level">(Уровень: 1 - 9)</div>
+      </div>
+      <div class="target-number"> 
+        <p class="target-number-text"> Найдите указанное число: </p>
+        <span class="target-number-reference"></span>
+      </div>
+      <div class="number-table"></div>
+    </div>
+    <div class="result"></div>
+  </div>
+  <script>
+    Game = new FindNumberGame();
+  </script>
+</body>
+</html>
