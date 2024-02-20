@@ -70,7 +70,7 @@ class Stat {
 
 	// Функция для вычисления результата игры
 	getResult(current_level) {
-		const accuracy = ((this.num_correct_answers / current_level) * 100).toFixed(2);
+		const accuracy = ((this.num_correct_answers / current_level) * 100).toFixed(0);
 		return `Отгадано чисел: ${this.num_correct_answers} из ${current_level}. Точность: ${accuracy}%`;
 	}
 
@@ -208,12 +208,11 @@ class FindNumberGame {
 
 	// Функция для перехода на следующий уровень
 	nextLevel() {
-		this.paramsGen.current_level++;
-
-		if (this.paramsGen.current_level > this.paramsGen.levels) {
-			this.endGame();
-		} else {
+		if (this.paramsGen.current_level < this.paramsGen.levels) {
+			this.paramsGen.current_level++;
 			this.updateGameWindow();
+		} else {
+			this.endGame();
 		}
 	}
 
